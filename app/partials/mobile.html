@@ -1,0 +1,58 @@
+<div  class="row">
+    <div class="col-xs-4">
+        <select
+            ng-model="productFromSelect1"
+            ng-change="productIsSelected()"
+            >
+            <option value="">Select product</option>
+            <option 
+                ng-repeat="product in products" 
+                ng-disabled="product.disable"
+                value="{{product.id}}"
+                >
+                {{product.name}}</option>
+
+        </select> 
+        <div class="panel panel-default">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect1)" >{{key}} : {{value}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <select
+            ng-model="productFromSelect2"
+            ng-change="productIsSelected()">
+            <option value="">Select product</option>
+            <option 
+                ng-repeat="product in products" 
+                ng-disabled="product.disable"
+                value="{{product.id}}"
+                >
+                {{product.name}}</option>
+        </select>  
+        <div class="panel panel-default">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect2)" >{{key}} : {{value}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <select
+            ng-model="productFromSelect3"
+            ng-change="productIsSelected()">
+            <option value="">Select product</option>
+            <option 
+                ng-repeat="product in products" 
+                ng-disabled="product.disable"
+                value="{{product.id}}"
+                >
+                {{product.name}}</option>
+        </select> 
+        <div class="panel panel-default">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect3)" >{{key}} : {{value}}</li>
+            </ul>
+        </div>
+    </div>
+</div>  

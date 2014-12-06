@@ -1,11 +1,16 @@
 <!doctype html>
-<html>
+<html ng-app="syzygyApp">
     <head>
         <meta charset="utf-8">
         <title>Syzygy App</title>
-        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <script src="../bower_components/angular/angular.min.js"></script>
+        <main class="container" ng-view=""></main>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src='scripts/services/productService.js'></script>
+        <script src="scripts/controllers/comparingToolCtrl.js"></script>
     </body>
 </html>
