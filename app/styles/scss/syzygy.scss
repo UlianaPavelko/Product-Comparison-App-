@@ -1,0 +1,36 @@
+$main-bgColor: #fff;
+$text-color: #555;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+body{
+  color: $text-color;  
+}
+.secondary-header{
+    border-bottom: 1px solid darken( $main-bgColor, 5% );
+    margin-bottom: 20px;
+    h3{
+        margin-bottom: 20px;
+    }
+}
+.separator{
+    border-top: 1px solid darken( $main-bgColor, 5% );
+}
+.select{
+    padding: 8px;
+    border: 1px solid darken( $main-bgColor, 10% );
+    @include border-radius(4px);
+    background: darken( $main-bgColor, 5% ); 
+    margin-bottom: 20px; 
+    width: 100%;
+}
+.striped{
+    li{
+        &:nth-child(odd){
+            background: darken( $main-bgColor, 5% );
+        }
+    } 
+}
+

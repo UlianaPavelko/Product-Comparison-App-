@@ -1,26 +1,29 @@
-<div  class="row">
-    <div class="col-xs-4">
-        <select
-            ng-model="productFromSelect1"
-            ng-change="productIsSelected()"
-            >
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <h1>Compare Products</h1>
+        </div>  
+    </div>
+</div>
+<div  class="row"> 
+    <div class="col-sm-4">
+        <select class="select"
+                ng-model="productFromSelect1"
+                ng-change="productIsSelected()"
+                >
             <option value="">Select product</option>
             <option 
                 ng-repeat="product in products" 
                 ng-disabled="product.disable"
                 value="{{product.id}}"
                 >
-                {{product.name}}</option>
-
-        </select> 
-        <div class="panel panel-default">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect1)" >{{key}} : {{value}}</li>
-            </ul>
-        </div>
+                {{product.name}}
+            </option>
+        </select>
     </div>
-    <div class="col-xs-4">
+    <div class="col-sm-4">
         <select
+            class="select"
             ng-model="productFromSelect2"
             ng-change="productIsSelected()">
             <option value="">Select product</option>
@@ -31,14 +34,10 @@
                 >
                 {{product.name}}</option>
         </select>  
-        <div class="panel panel-default">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect2)" >{{key}} : {{value}}</li>
-            </ul>
-        </div>
     </div>
-    <div class="col-xs-4">
+    <div class="col-sm-4">
         <select
+            class="select"
             ng-model="productFromSelect3"
             ng-change="productIsSelected()">
             <option value="">Select product</option>
@@ -49,10 +48,41 @@
                 >
                 {{product.name}}</option>
         </select> 
-        <div class="panel panel-default">
-            <ul class="list-group">
+    </div>
+</div> 
+<div class="row">
+    <div class="col-sm-12">
+        <div class="separator"></div>
+    </div>
+</div>
+<div class="row" ng-show="productFromSelect1 || productFromSelect2 || productFromSelect3">
+    <div class="col-sm-12">
+        <div class="secondary-header">
+            <h3>Results</h3>
+        </div>  
+    </div>
+</div>
+<div  class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-default" ng-show="productFromSelect1">
+            <ul class="list-group striped">
+                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect1)" >{{key}} : {{value}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default" ng-show="productFromSelect2">
+            <ul class="list-group striped">
+                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect2)" >{{key}} : {{value}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default" ng-show="productFromSelect3">
+            <ul class="list-group striped">
                 <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect3)" >{{key}} : {{value}}</li>
             </ul>
         </div>
     </div>
 </div>  
+
