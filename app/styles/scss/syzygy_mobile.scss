@@ -1,0 +1,71 @@
+$main-Color: #fff;
+$text-color: #555;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+body{
+    color: $text-color;
+    .carousel-control{
+        &.right{
+            background-image: none;
+            width: 0;
+        } 
+        &.left {
+            background-image: none;
+            width: 0;
+            .glyphicon{
+
+            }
+        } 
+        .glyphicon{
+            top: 20px;
+            margin: 0;
+            color: $text-color; 
+            font-size: 30px;
+
+        }
+    }
+}
+.heading-wrapper{
+    background: darken( $main-Color, 20% ); 
+}
+.heading{
+    margin: 0;
+    h1{
+        font-size: 30px;
+        font-weight: 400;
+        margin: 20px 0;
+        color: $main-Color;
+        margin: 5% 0;
+    }
+}
+select{
+    border: none;
+    background: darken( $main-Color, 5% ); 
+    width: 100%; 
+    padding: 5% 0;
+    background: darken( $main-Color, 5% )
+}
+.select-tabs{
+    background: darken( $main-Color, 5% ); 
+}
+.striped{
+    li{
+        &:nth-child(odd){
+            background: darken( $main-Color, 5% );
+        }
+    } 
+}
+.panel{
+    @include border-radius(0px);
+}
+.highlighted {
+    background-color: #adCEE8;
+}
+.block{
+    float: left;
+    width: 33%;
+}
+

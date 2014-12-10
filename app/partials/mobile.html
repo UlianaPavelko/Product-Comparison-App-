@@ -1,58 +1,75 @@
-<div  class="row">
-    <div class="col-xs-4">
-        <select
-            ng-model="productFromSelect1"
-            ng-change="productIsSelected()"
-            >
-            <option value="">Select product</option>
-            <option 
-                ng-repeat="product in products" 
-                ng-disabled="product.disable"
-                value="{{product.id}}"
-                >
-                {{product.name}}</option>
-
-        </select> 
-        <div class="panel panel-default">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect1)" >{{key}} : {{value}}</li>
-            </ul>
+<div class="heading-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="heading">
+                    <h1 class="text-center">Compare Products</h1>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+<div class="select-tabs">
+    <div class="container">
+        <div  class="row">
+            <div class="block">
+                <select
+                    class="text-center"
+                    ng-class="{'highlighted' : getActiveProduct(productFromSelect1)}"
+                    ng-model="productFromSelect1"
+                    ng-change="productIsSelected()"
+                    >
+                    <option value="">Select</option>
+                    <option 
+                        ng-repeat="product in products"
+                        ng-disabled="product.disable"
+                        value="{{product.id}}"
+                        >
+                        {{product.name}}</option>
+                </select> 
+            </div>
+            <div class="block">
+                <select
+                    class="text-center"
+                    ng-class="{'highlighted' : getActiveProduct(productFromSelect2)}"
+                    ng-model="productFromSelect2"
+                    ng-change="productIsSelected()">
+                    <option value="">Select</option>
+                    <option 
+                        ng-repeat="product in products"
+                        ng-disabled="product.disable"
+                        value="{{product.id}}"
+                        >
+                        {{product.name}}</option>
+                </select>  
+            </div>
+            <div class="block">
+                <select
+                    class="text-center"
+                    ng-class="{'highlighted' : getActiveProduct(productFromSelect3)}"
+                    ng-model="productFromSelect3"
+                    ng-change="productIsSelected()">
+                    <option value="">Select</option>
+                    <option 
+                        ng-repeat="product in products"
+                        ng-disabled="product.disable"
+                        value="{{product.id}}"
+                        >
+                        {{product.name}}</option>
+                </select> 
+            </div>
         </div>
     </div>
-    <div class="col-xs-4">
-        <select
-            ng-model="productFromSelect2"
-            ng-change="productIsSelected()">
-            <option value="">Select product</option>
-            <option 
-                ng-repeat="product in products" 
-                ng-disabled="product.disable"
-                value="{{product.id}}"
-                >
-                {{product.name}}</option>
-        </select>  
-        <div class="panel panel-default">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect2)" >{{key}} : {{value}}</li>
-            </ul>
-        </div>
-    </div>
-    <div class="col-xs-4">
-        <select
-            ng-model="productFromSelect3"
-            ng-change="productIsSelected()">
-            <option value="">Select product</option>
-            <option 
-                ng-repeat="product in products" 
-                ng-disabled="product.disable"
-                value="{{product.id}}"
-                >
-                {{product.name}}</option>
-        </select> 
-        <div class="panel panel-default">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, value) in findProduct(productFromSelect3)" >{{key}} : {{value}}</li>
-            </ul>
-        </div>
-    </div>
-</div>  
+</div>
+<div class="container"> 
+    <carousel>
+        <slide ng-repeat="product in products| filter:{disable: true}" active="product.active">
+            <h3>{{product.name}}</h3>
+            <div class="panel panel-default">
+                <ul class="list-group striped">
+                    <li class="list-group-item" ng-repeat="(key, value) in findProduct(product.id)" >{{key}} : {{value}}</li>
+                </ul>
+            </div>
+        </slide>
+    </carousel>
+</div>
