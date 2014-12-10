@@ -1,14 +1,20 @@
 <!doctype html>
 <html ng-app="syzygyApp">
     <head>
-        <meta charset="utf-8">
         <title>Syzygy App</title>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> 
+        <link rel="stylesheet" media="only screen and (max-width: 768px)" href="styles/css/syzygy_mobile.css" />
+        <link rel="stylesheet" media="only screen and (min-width: 769px)" href="styles/css/syzygy.css" />
     </head>
     <body>
-        <main class="container" ng-view=""></main>
+        <header></header>
+        <main ng-view=""></main>
+        <footer></footer>
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src='scripts/services/productService.js'></script>
         <script src="scripts/controllers/comparingToolCtrl.js"></script>
