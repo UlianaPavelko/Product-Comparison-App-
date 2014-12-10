@@ -1,4 +1,4 @@
-var syzygyApp = angular.module('syzygyApp', ['ngRoute', 'productService']);
+var syzygyApp = angular.module('syzygyApp', ['ngRoute', 'productService', 'ui.bootstrap']);
 syzygyApp.config(
     function ($routeProvider) {
         $routeProvider
