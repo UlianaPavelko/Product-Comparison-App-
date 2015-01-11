@@ -6,4 +6,3 @@ angular.module('productService', [])
             },
         };
     });
-
