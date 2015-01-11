@@ -1,5 +1,5 @@
-var syzygyApp = angular.module('syzygyApp', ['ngRoute', 'productService', 'ui.bootstrap']);
-syzygyApp.config(
+var comparisonApp = angular.module('comparisonApp', ['ngRoute', 'productService', 'ui.bootstrap']);
+comparisonApp.config(
     function ($routeProvider) {
         $routeProvider
             .when('/', {
