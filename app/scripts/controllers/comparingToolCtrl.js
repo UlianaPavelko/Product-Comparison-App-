@@ -1,4 +1,4 @@
-syzygyApp.controller('ComparingToolCtrl', function ($scope, productService)
+comparisonApp.controller('ComparingToolCtrl', function ($scope, productService)
 {
     $scope.products = [];
     productService.getProducts()
