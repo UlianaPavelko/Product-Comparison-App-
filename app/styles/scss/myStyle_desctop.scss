@@ -1,5 +1,6 @@
 $main-bgColor: #fff;
 $text-color: #555;
+
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     border-radius: $radius;
